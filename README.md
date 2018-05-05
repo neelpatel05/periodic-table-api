@@ -40,21 +40,21 @@ This will fetch all the 119 elements from periodic table.
 ### Atomic Number
 
 
-- [http://neelpatel05.pythonanywhere.com/elements/atomicnumber?atomicnumber=20](http://neelpatel05.pythonanywhere.com/elements/atomicnumber?atomicnumber=20)
+- [http://neelpatel05.pythonanywhere.com/element/atomicnumber?atomicnumber=20](http://neelpatel05.pythonanywhere.com/element/atomicnumber?atomicnumber=20)
 
 This will fetch element from periodic table having atomic number 20. Relace 20 with any other atomic number to fetch that element from 119.
 
 ### Atomic Name
 
 
-- [http://neelpatel05.pythonanywhere.com/elements/atomicname?atomicname=Mercury](http://neelpatel05.pythonanywhere.com/elements/atomicname?atomicname=Mercury)
+- [http://neelpatel05.pythonanywhere.com/element/atomicname?atomicname=Mercury](http://neelpatel05.pythonanywhere.com/element/atomicname?atomicname=Mercury)
 
 This will fetch element from periodic table having atomic name "Mercury". Relace "Mercury" with any other atomic name to fetch that element.
 
 ### Atomic Symbol
 
 
-- [http://neelpatel05.pythonanywhere.com/elements/symbol?symbol=H](http://neelpatel05.pythonanywhere.com/elements/symbol?symbol=H)
+- [http://neelpatel05.pythonanywhere.com/element/symbol?symbol=H](http://neelpatel05.pythonanywhere.com/element/symbol?symbol=H)
 
 This will fetch element from periodic table having atomic symbol "H" i.e. Hydrogen. Relace "H" with any other atomic symbol to fetch that element.
 
