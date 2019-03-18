@@ -1,21 +1,18 @@
-from flask import Flask
-from flask import request
-from flask import jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
-from pprint import pprint
 
 app = Flask(__name__)
+CORS(app)
 
 with open('data.json') as f:
     data = json.load(f)
 
-pprint(data)
-
-@app.route('/')
+@app.route('/',methods=["GET"])
 def all():
     return jsonify(data)
 
-@app.route('/element/atomicnumber')
+@app.route('/element/atomicnumber',methods=["GET"])
 def atomicnumber():
     if 'atomicnumber' in request.args:
         atomicnumber = request.args['atomicnumber']
@@ -23,11 +20,13 @@ def atomicnumber():
             if atomicnumber == str(i['atomicNumber']):
                 return jsonify(i)
         else:
-            return jsonify({"message":"Does not exists"})
+            message="does not exists"
+            return jsonify(message=message)
     else:
-        return jsonify({"message":"Does not exists"})
+        message="does not exists"
+        return jsonify(message=message)
 
-@app.route('/element/atomicname')
+@app.route('/element/atomicname',methods=["GET"])
 def atomicname():
     if 'atomicname' in request.args:
         atomicname = str(request.args['atomicname'])
@@ -35,12 +34,14 @@ def atomicname():
             if atomicname.lower() == str(i["name"].lower()):
                 return jsonify(i)
         else:
-            return jsonify({"message":"Does not exists"})
+            message="does not exists"
+            return jsonify(message=message)
     else:
-        return jsonify({"message":"Does not exists"})
+        message="does not exists"
+        return jsonify(message=message)
 
 
-@app.route('/element/symbol')
+@app.route('/element/symbol',methods=["GET"])
 def atomicsymbol():
     if 'symbol' in request.args:
         symbol = str(request.args['symbol'])
@@ -48,12 +49,14 @@ def atomicsymbol():
             if symbol.lower() == str(i['symbol'].lower()):
                 return jsonify(i)
         else:
-            return jsonify({"message":"Does not exists"})
+            message="does not exists"
+            return jsonify(message=message)
     else:
-        return jsonify({"message":"Does not exists"})
+        message="does not exists"
+        return jsonify(message=message)
 
 
-@app.route('/element/groupblock')
+@app.route('/element/groupblock',methods=["GET"])
 def atomicgroupblock():
     data1=[]
     if 'groupblock' in request.args:
@@ -61,14 +64,16 @@ def atomicgroupblock():
         for i in data:
             if groupblock.lower() == str(i['groupBlock'].lower()):
                 data1.append(i)
-        else:
-            data1.append({"message":"Does not exists"})
+        if data1 == []:
+            message="does not exists"
+            return jsonify(message=message)
 
         return jsonify(data1)
     else:
-        return jsonify({"message":"Does not exists"})
+        message="does not exists"
+        return jsonify(message=message)
 
-@app.route('/element/bondingtype')
+@app.route('/element/bondingtype',methods=["GET"])
 def atomicbondingtype():
     data1=[]
     if 'bondingtype' in request.args:
@@ -76,13 +81,15 @@ def atomicbondingtype():
         for i in data:
             if bondingtype.lower() == str(i['bondingType'].lower()):
                 data1.append(i)
-        else:
-            data1.append({"message":"Does not exists"})       
+        if data1 == []:
+            message="does not exists"
+            return jsonify(message=message)
         return jsonify(data1)
     else:
-        return jsonify({"message":"Does not exists"})
+        message="does not exists"
+        return jsonify(message=message)
 
-@app.route('/element/state')
+@app.route('/element/state',methods=["GET"])
 def atomicstate():
     data1=[]
     if 'state' in request.args:
@@ -90,12 +97,14 @@ def atomicstate():
         for i in data:
             if state.lower() == str(i['standardState'].lower()):
                 data1.append(i)
-        else:
-            data1.append({"message":"Does not exists"})       
+        if data1 == []:
+            message="does not exists"
+            return jsonify(message=message)       
         return jsonify(data1)
     else:
-        return jsonify({"message":"Does not exists"})
+        message="does not exists"
+        return jsonify(message=message)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="127.0.0.1",port=8080,debug=True)
