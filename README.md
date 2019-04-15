@@ -24,12 +24,12 @@ The following document will specify how to use the API to fetch the periodic ele
 | meltingPoint           |
 | oxidationStates        |
 | standardState          |
-| vanDelWaalsRadius      |
+| vanDerWaalsRadius      |
 | yearDiscovered         |
 
 
 ## Methods
-There are total of 6 methods by which you can fetch the data : 
+There are total of 6 methods by which you can fetch the data :
 
 ### All
 
