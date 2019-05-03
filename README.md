@@ -1,5 +1,6 @@
 # periodic-table-api
 API to fetch elements of the periodic table in JSON format. Uses Pandas for dumping .csv data to .json and Flask for API Integration. Deployed on "pythonanywhere.com".
+Checkout the following repo [periodic-table-api-go](https://github.com/neelpatel05/periodic-table-api-go) written in golang for fast performance of API
 
 ## Overview
 The following document will specify how to use the API to fetch the periodic elements in JSON. Also it will state different methods throught which the elements can be fetch.
