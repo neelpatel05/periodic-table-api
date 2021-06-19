@@ -18,7 +18,7 @@ def all():
 
 @app.route('/element/atomicnumber',methods=["GET","POST"])
 def atomicnumber():
-    if request.methods == "GET":
+    if request.method == "GET":
         if 'atomicnumber' in request.args:
             atomicnumber = request.args['atomicnumber']
             for i in data:
@@ -37,7 +37,7 @@ def atomicnumber():
 
 @app.route('/element/atomicname',methods=["GET","POST"])
 def atomicname():
-    if request.methods == "GET":
+    if request.method == "GET":
         if 'atomicname' in request.args:
             atomicname = str(request.args['atomicname'])
             for i in data:
